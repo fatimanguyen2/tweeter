@@ -1,3 +1,16 @@
+#tweet-container {
+  opacity: 0.7;
+}
+
+#tweet-container article:hover {
+  opacity: 1;
+  box-shadow: 10px 10px 10px lightgray;
+}
+
+#tweet-container article:hover .handle{
+  visibility: visible;
+}
+
 #tweet-container article {
   border: thick solid black;
   margin: 50px 0px;
@@ -14,10 +27,18 @@
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  align-items: center;
 }
 
-#tweet-container header .handle {
+#tweet-container .avatar {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+#tweet-container .handle {
   color: lightgrey;
+  visibility: hidden;
 }
 
 #tweet-container main {
@@ -25,6 +46,8 @@
 }
 
 #tweet-container footer {
+  border-top: thick solid black;
+  padding-top: 15px;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -34,4 +57,3 @@
 #tweet-container footer i {
   color: #4056A1;
 }
-

@@ -44,6 +44,8 @@
 
     <!-- Page-specific (main) content here -->
     <main class="container">
+
+      <!-- New Tweet -->
       <section class="new-tweet">
         <h2>Compose Tweet</h2>
         <form method="POST" action="/tweets/">
@@ -59,17 +61,21 @@
       <!-- All Tweets -->
       <section id='tweet-container'>
         <article>
+
           <header>
-            <div>
+            <div class='avatar'>
               <img src="/images/profile-hex.png">
-              Person Name
+              <p>Person Name</p>
             </div>
-            <div class='handle'>@Another Person</div>
+            <p class='handle'>@Another Person</p>
           </header>
-          <main> tweet text</main>
-          <hr>
+
+          <main>
+            <p> tweet text</p>
+          </main>
+
           <footer>
-            <div>5 days ago</div>
+            <p>5 days ago</p>
             <div>
               <i class="fas fa-flag"></i>
               <i class="fas fa-retweet"></i>
