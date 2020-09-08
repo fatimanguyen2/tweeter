@@ -6,6 +6,7 @@
 
     <!-- External CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" type="text/css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css">
 
     <!-- Font CSS -->
     <link href="https://fonts.googleapis.com/css2?family=Bungee&family=Source+Sans+Pro:ital,wght@0,300;0,600;1,300;1,600&display=swap" rel="stylesheet">
@@ -15,6 +16,7 @@
     <link rel='stylesheet' href='/styles/nav.css' type='text/css'/>
     <link rel='stylesheet' href='/styles/header.css' type='text/css'/>
     <link rel='stylesheet' href='/styles/new-tweet.css' type='text/css'/>
+    <link rel='stylesheet' href='/styles/all-tweets.css' type='text/css'/>
 
     <!-- External JS -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
@@ -53,6 +55,30 @@
           </div>
         </form>
       </section>
+
+      <!-- All Tweets -->
+      <section id='tweet-container'>
+        <article>
+          <header>
+            <div>
+              <img src="/images/profile-hex.png">
+              Person Name
+            </div>
+            <div class='handle'>@Another Person</div>
+          </header>
+          <main> tweet text</main>
+          <hr>
+          <footer>
+            <div>5 days ago</div>
+            <div>
+              <i class="fas fa-flag"></i>
+              <i class="fas fa-retweet"></i>
+              <i class="fas fa-heart"></i>
+            </div>
+          </footer>
+        </article>
+      </section>
+
     </main>
   </body>
 </html>

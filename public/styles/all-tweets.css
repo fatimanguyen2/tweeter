@@ -1,0 +1,37 @@
+#tweet-container article {
+  border: thick solid black;
+  margin: 50px 0px;
+  padding: 20px;
+}
+
+#tweet-container img {
+  width: 100px;
+}
+
+#tweet-container header {
+  background-color: #f4f1ec;
+  height: 100px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+#tweet-container header .handle {
+  color: lightgrey;
+}
+
+#tweet-container main {
+  margin: 30px;
+}
+
+#tweet-container footer {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  font-size: 0.5em;
+}
+
+#tweet-container footer i {
+  color: #4056A1;
+}
+

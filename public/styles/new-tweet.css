@@ -9,9 +9,12 @@ textarea {
   border-bottom-color: black;
 }
 
+.new-tweet div{
+  font-family: 'Bungee', sans-serif;
+  margin: 10px 0px;
+}
 button {
   background-color: #4056A1;
-  font-family: 'Bungee', sans-serif;
   color: white;
 }
 
@@ -20,6 +23,7 @@ form div {
   justify-content: space-between;
 }
 
+/* Class added/removed depending on character count */
 .exceedingCharLimit {
   color: red;
 }
