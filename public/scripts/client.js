@@ -62,7 +62,7 @@ $(document).ready(function() {
       $('#tweet-container').append(createTweetElement(tweetObj));
     });
   };
-  //FUNCTION BELOW NOT WORKING, DONT UNDERSTSND ERROR
+  //FUNCTION BELOW NOT WORKING, DONT UNDERSTAND ERROR
   // const renderTweets = function(arrOfObjs) {
   //   arrOfObjs.forEach(function(tweetObj){
   //     $('#tweet-container').append(createTweetElement(tweetObj));
