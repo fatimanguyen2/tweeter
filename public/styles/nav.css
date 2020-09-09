@@ -6,8 +6,23 @@ nav {
   padding: 1.5em;
   position: fixed;
   top: 0;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
 }
 
-span {
+nav span {
   font-family: 'Bungee',sans-serif;
 }
+
+nav p {
+  font-family: 'Sans Source Pro', sans-serif; 
+  font-size: 0.8em;
+}
+
+nav i {
+  color: red;
+  size: 1px;
+}
+
