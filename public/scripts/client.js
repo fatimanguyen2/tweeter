@@ -51,12 +51,19 @@ $(document).ready(function() {
   $('form').submit(function() {
     const $formText = $(this).serialize();
     event.preventDefault();
-  
+    
     $.ajax('/tweets/', {method: 'POST', data: $formText})
   })
 
   // Fetch data from client-side JS using AJAX
-  const loadTweets = function() 
+  const loadTweets = function() {
+    $.get('/tweets/', (arrayOfDbTweets) => {
+      renderTweets(arrayOfDbTweets);
+    });
+    // $.get('/tweets/', renderTweets(arrayOfDbTweets)); //why doesn't this work?
+  };
+
+  loadTweets();
 });
 
 
