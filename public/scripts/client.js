@@ -3,8 +3,16 @@
  * jQuery is already loaded
  * Reminder: Use (and do all your DOM work in) jQuery's document ready function
  */
-// Create a tweet element from a tweet object
+$(document).ready(function() {
+// Create safeHTML text
+  const escape = (str) => {
+    let p = document.createElement('p');
+    p.appendChild(document.createTextNode(str));
+    return p.innerHTML;
+  };
+  // Create a tweet element from a tweet object
   const createTweetElement = function(tweetData) {
+
     const $tweet = $(`
       <article>
         <header>
@@ -14,11 +22,11 @@
           </div>
           <p class='handle'>${tweetData.user.handle}</p>
         </header>
-
+  
         <main>
-          <p>${tweetData.content.text}</p>
+          <p>${escape(tweetData.content.text)}</p>
         </main>
-
+  
         <footer>
           <p>${tweetData.created_at}</p>
           <div>
@@ -47,12 +55,24 @@
     event.preventDefault();
 
     if (!textAreaValue) {
-      alert('Error, tweet contains no text. Please write out your tweet!'); //NEED RETURN STATEMENT????
+      alert('Error, tweet contains no text. Please write out your tweet!');
     } else if (textAreaValue.length > 140) {
       alert('Tweet exceeding character limit! Please shorten your tweet.');
     } else {
       // $.ajax('/tweets/', {method: 'POST', data: $formText}) //ALTERNATIVE WAY
+
       $.post('/tweets', $formText)
+        .then(() => {/* $.get('/tweets/') */
+        $.get('/tweets/', (data) => {
+          const newTweet = createTweetElement(data[data.length - 1]);
+          $('#tweet-container').prepend(newTweet);
+        })
+      })
+        // WHAT S WRONG WITH MY PROMISE!?!?! 
+        // .then(data => {
+        //   const newTweet = createTweetElement(data[data.length - 1]);
+        //   $('#tweet-container').prepend(newTweet);
+        // }) 
     }
   })
 
@@ -61,7 +81,6 @@
     $.get('/tweets/', renderTweets);
   };
 
-$(document).ready(function() {
   loadTweets();
 });
 
