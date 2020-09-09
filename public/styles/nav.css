@@ -17,7 +17,7 @@ nav span {
   font-family: 'Bungee',sans-serif;
 }
 
-#toggle-bar {
+#compose-button {
   font-family: 'Sans Source Pro', sans-serif; 
   font-size: 0.8em;
   display:flex;
@@ -25,7 +25,16 @@ nav span {
   align-items: center;
 }
 
-#toggle-bar i {
-  color: red;
+#compose-button button {
+  border: 0;
+  padding-bottom: 5px;
 }
 
+#compose-button i {
+  color: red;
+  position: relative;
+}
+
+#compose-button button:hover + i {
+  top: 10px;
+}
