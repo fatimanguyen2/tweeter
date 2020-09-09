@@ -4,31 +4,6 @@
  * Reminder: Use (and do all your DOM work in) jQuery's document ready function
  */
 $(document).ready(function() {
-  const data = [
-    {
-      "user": {
-        "name": "Newton",
-        "avatars": "https://i.imgur.com/73hZDYK.png"
-        ,
-        "handle": "@SirIsaac"
-      },
-      "content": {
-        "text": "If I have seen further it is by standing on the shoulders of giants"
-      },
-      "created_at": 1461116232227
-    },
-    {
-      "user": {
-        "name": "Descartes",
-        "avatars": "https://i.imgur.com/nlhLi3I.png",
-        "handle": "@rd" },
-      "content": {
-        "text": "Je pense , donc je suis"
-      },
-      "created_at": 1461113959088
-    }
-  ]
-
 // Create a tweet element from a tweet object
   const createTweetElement = function(tweetData) {
     const $tweet = $(`
@@ -72,20 +47,16 @@ $(document).ready(function() {
   // }:
   // renderTweets(data);
 
-// Use AJAX instead of default behavior to post new tweet
+  // Post new tweet using AJAX
   $('form').submit(function() {
-    const $formData = $(this).serialize();
-    const $tweetContainer = $('#tweetContainer')
-
-    console.log('form submitted');
+    const $formText = $(this).serialize();
     event.preventDefault();
-    
-    $.ajax('/tweets/', {method: 'POST', data: $formData})
-      .then(function(newTweet) {
-        $tweetContainer.append(newTweet);
-      });
-    // $.post('/tweets', $(this).serialize())
+  
+    $.ajax('/tweets/', {method: 'POST', data: $formText})
   })
+
+  // Fetch data from client-side JS using AJAX
+  const loadTweets = function() 
 });
 
 

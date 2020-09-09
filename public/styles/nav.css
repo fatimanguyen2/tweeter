@@ -16,13 +16,15 @@ nav span {
   font-family: 'Bungee',sans-serif;
 }
 
-nav p {
+#toggle-bar {
   font-family: 'Sans Source Pro', sans-serif; 
   font-size: 0.8em;
+  display:flex;
+  flex-direction: column;
+  align-items: center;
 }
 
-nav i {
+#toggle-bar i {
   color: red;
-  size: 1px;
 }
 
