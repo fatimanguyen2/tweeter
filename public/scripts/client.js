@@ -3,7 +3,6 @@
  * jQuery is already loaded
  * Reminder: Use (and do all your DOM work in) jQuery's document ready function
  */
-$(document).ready(function() {
 // Create a tweet element from a tweet object
   const createTweetElement = function(tweetData) {
     const $tweet = $(`
@@ -13,7 +12,7 @@ $(document).ready(function() {
             <img src=${tweetData.user.avatars}>
             <p>${tweetData.user.name}</p>
           </div>
-          <p class='handle'>t${tweetData.user.handle}</p>
+          <p class='handle'>${tweetData.user.handle}</p>
         </header>
 
         <main>
@@ -39,30 +38,30 @@ $(document).ready(function() {
       $('#tweet-container').append(createTweetElement(tweetObj));
     });
   };
-  //FUNCTION BELOW NOT WORKING, DONT UNDERSTAND ERROR
-  // const renderTweets = function(arrOfObjs) {
-  //   arrOfObjs.forEach(function(tweetObj){
-  //     $('#tweet-container').append(createTweetElement(tweetObj));
-  //   });
-  // }:
-  // renderTweets(data);
 
   // Post new tweet using AJAX
-  $('form').submit(function() {
+  $('form').submit(function(event) {
     const $formText = $(this).serialize();
+    const textAreaValue = $(this).find('textarea').val();
+
     event.preventDefault();
-    
-    $.ajax('/tweets/', {method: 'POST', data: $formText})
+
+    if (!textAreaValue) {
+      alert('Error, tweet contains no text. Please write out your tweet!'); //NEED RETURN STATEMENT????
+    } else if (textAreaValue.length > 140) {
+      alert('Tweet exceeding character limit! Please shorten your tweet.');
+    } else {
+      // $.ajax('/tweets/', {method: 'POST', data: $formText}) //ALTERNATIVE WAY
+      $.post('/tweets', $formText)
+    }
   })
 
   // Fetch data from client-side JS using AJAX
   const loadTweets = function() {
-    $.get('/tweets/', (arrayOfDbTweets) => {
-      renderTweets(arrayOfDbTweets);
-    });
-    // $.get('/tweets/', renderTweets(arrayOfDbTweets)); //why doesn't this work?
+    $.get('/tweets/', renderTweets);
   };
 
+$(document).ready(function() {
   loadTweets();
 });
 

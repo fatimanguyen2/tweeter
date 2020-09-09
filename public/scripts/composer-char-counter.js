@@ -5,7 +5,6 @@ $(document).ready(() => {
 
     $counterEl.text(140 - charCount);
     if (140 - charCount < 0) {
-      // $counterEl.css('color', 'red');
       $counterEl.addClass('exceedingCharLimit');
     } else {
       $counterEl.removeClass('exceedingCharLimit');
