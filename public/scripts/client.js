@@ -29,6 +29,7 @@ $(document).ready(function() {
     }
   ]
 
+// Create a tweet element from a tweet object
   const createTweetElement = function(tweetData) {
     const $tweet = $(`
       <article>
@@ -57,6 +58,7 @@ $(document).ready(function() {
     return $tweet;
   };
   
+  // Append an array of tweets to tweeter page
   const renderTweets = function(arrOfObjs) {
     arrOfObjs.forEach(function(tweetObj){
       $('#tweet-container').append(createTweetElement(tweetObj));
@@ -68,8 +70,22 @@ $(document).ready(function() {
   //     $('#tweet-container').append(createTweetElement(tweetObj));
   //   });
   // }:
+  // renderTweets(data);
 
-  renderTweets(data);
+// Use AJAX instead of default behavior to post new tweet
+  $('form').submit(function() {
+    const $formData = $(this).serialize();
+    const $tweetContainer = $('#tweetContainer')
+
+    console.log('form submitted');
+    event.preventDefault();
+    
+    $.ajax('/tweets/', {method: 'POST', data: $formData})
+      .then(function(newTweet) {
+        $tweetContainer.append(newTweet);
+      });
+    // $.post('/tweets', $(this).serialize())
+  })
 });
 
 

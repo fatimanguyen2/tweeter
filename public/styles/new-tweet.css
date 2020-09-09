@@ -4,9 +4,10 @@ form {
 }
 
 textarea {
-  border-bottom-style: solid;
-  border-bottom-width: thick;
-  border-bottom-color: black;
+  background-color: transparent;
+  border: none;
+  resize: none;
+  border-bottom: thick solid black;
 }
 
 .new-tweet div{
