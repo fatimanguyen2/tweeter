@@ -3,7 +3,6 @@
  * jQuery is already loaded
  * Reminder: Use (and do all your DOM work in) jQuery's document ready function
  */
-$(document).ready(function() {
 // Create safeHTML text
   const escape = (str) => {
     let p = document.createElement('p');
@@ -47,32 +46,37 @@ $(document).ready(function() {
     });
   };
 
+  
+  $(document).ready(function() {
+    const $errorMess = $('#error');
+    $errorMess.hide(); //WHY CANT I PUT IT OUTSIDE OF DOCUMENT READY
+
   // Post new tweet using AJAX
   $('form').submit(function(event) {
     const $formText = $(this).serialize();
-    const textAreaValue = $(this).find('textarea').val();
+    const textArea = $(this).find('textarea').val();
 
     event.preventDefault();
 
-    if (!textAreaValue) {
-      alert('Error, tweet contains no text. Please write out your tweet!');
-    } else if (textAreaValue.length > 140) {
-      alert('Tweet exceeding character limit! Please shorten your tweet.');
+    $errorMess.hide();
+    if (!textArea) {
+      $errorMess.text('This field is required.').show();
+    } else if (textArea.length > 140) {
+      $errorMess.text('The text entered exceeds the maximum length.').show();
     } else {
       // $.ajax('/tweets/', {method: 'POST', data: $formText}) //ALTERNATIVE WAY
-
+      // $.get('/tweets/', (data) => {
+      //   const newTweet = createTweetElement(data[data.length - 1]);
+      //   $('#tweet-container').prepend(newTweet);
+      // })
       $.post('/tweets', $formText)
-        .then(() => {/* $.get('/tweets/') */
-        $.get('/tweets/', (data) => {
-          const newTweet = createTweetElement(data[data.length - 1]);
-          $('#tweet-container').prepend(newTweet);
-        })
+        .then(() => {$.get('/tweets/')
+
+          .then(data => {
+            const newTweet = createTweetElement(data[data.length - 1]);
+            $('#tweet-container').prepend(newTweet);
+          }) 
       })
-        // WHAT S WRONG WITH MY PROMISE!?!?! 
-        // .then(data => {
-        //   const newTweet = createTweetElement(data[data.length - 1]);
-        //   $('#tweet-container').prepend(newTweet);
-        // }) 
     }
   })
 

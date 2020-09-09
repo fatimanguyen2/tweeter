@@ -28,3 +28,12 @@ form div {
 .exceedingCharLimit {
   color: red;
 }
+
+/* Error message if empty text or text too long */
+#error {
+  color: red;
+  font-family: 'Sans Source Pro', sans-serif; 
+  font-size: 0.75em;
+  display: flex;
+  flex-direction: column;
+}
