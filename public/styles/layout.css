@@ -43,3 +43,29 @@ body {
    flex-direction: column;
    justify-content: center;
  }
+
+ /* Responsive design: change layout to desktop sieze */
+ @media only screen and (min-width: 1024px) {
+   body {
+     display:flex;
+     flex-direction: row;
+     align-items: flex-start;
+     padding-top: 10rem;
+   }
+
+   html body > header {
+     margin: 2rem;
+     width: 30%;
+   }
+
+   html .container {
+     margin: 2rem;
+     margin-top: 0;
+     width: 70%;
+   }
+
+   html .new-tweet {
+     margin: 2rem;
+     display: inline-block;
+   }
+ }
