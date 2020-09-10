@@ -27,6 +27,9 @@ textarea:focus {
   color: white;
 }
 
+.new-tweet button:focus {
+  outline: 3px solid rgb(94, 158, 214);
+}
 form div {
   display: flex;
   justify-content: space-between;

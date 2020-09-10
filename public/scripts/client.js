@@ -9,8 +9,6 @@ $(document).ready(function() {
   const $errorMess = $('#error');
   $errorMess.hide();
 
-  // $('.new-tweet').hide();
-
   //Show new tweet section on click
   $('#compose-button').click(() => {
     $('.new-tweet').slideToggle('fast');
@@ -36,6 +34,7 @@ $(document).ready(function() {
           const newTweet = createTweetElement(data[data.length - 1]);
           $('#tweet-container').prepend(newTweet);
         });
+      $('textarea').val('');
     }
   });
 

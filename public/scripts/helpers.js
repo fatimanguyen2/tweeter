@@ -14,6 +14,7 @@ const escape = (str) => {
 
 const determineTimeSince = (ms) => {
   const now = new Date();
+  console.log(now)
   // Get time difference from now and tweet time in secs
   const secsPassed = (now.getTime() - ms) / 1000;
   
@@ -39,7 +40,6 @@ const determineTimeSince = (ms) => {
 
 // Create a tweet element from a tweet object
 const createTweetElement = function(tweetData) {
-  // const date = new Date(tweetData.created_at)
   const date = determineTimeSince(tweetData.created_at);
   const $tweet = $(`
     <article>
