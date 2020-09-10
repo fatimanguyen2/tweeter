@@ -12,9 +12,35 @@ const escape = (str) => {
   return p.innerHTML;
 };
 
+const determineTimeSince = (ms) => {
+  const now = new Date();
+  // Get time difference from now and tweet time in secs
+  const secsPassed = (now.getTime() - ms) / 1000;
+  
+  let time;
+  switch (true) {
+    case (secsPassed < 60): 
+      time = parseInt(secsPassed) + ' seconds ago';
+      break;
+    case (secsPassed < 3600):
+      time = parseInt(secsPassed / 60 ) + ' minutes ago';
+      break;
+    case (secsPassed < 86400):
+      time = parseInt(secsPassed / 3600 ) + ' hours ago';
+      break;
+    case (secsPassed < 31536000): 
+      time = parseInt(secsPassed / 86400 ) + ' days ago';
+      break;
+    case (secsPassed >= 31536000): 
+      time = parseInt(secsPassed / 31536000 ) + ' years ago'; 
+  }
+  return time;
+};
+
 // Create a tweet element from a tweet object
 const createTweetElement = function(tweetData) {
-  const date = new Date(tweetData.created_at)
+  // const date = new Date(tweetData.created_at)
+  const date = determineTimeSince(tweetData.created_at);
   const $tweet = $(`
     <article>
       <header>

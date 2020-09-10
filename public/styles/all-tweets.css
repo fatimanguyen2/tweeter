@@ -4,7 +4,7 @@
 
 #tweet-container article:hover {
   opacity: 1;
-  box-shadow: 10px 10px 10px lightgray;
+  box-shadow: 20px 20px 20px rgb(182, 181, 181);
 }
 
 #tweet-container article:hover .handle{
@@ -19,6 +19,7 @@
 
 #tweet-container img {
   width: 100px;
+  margin-right: 1rem;
 }
 
 #tweet-container header {
