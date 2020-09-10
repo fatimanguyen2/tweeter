@@ -1,12 +1,10 @@
 // Helper functions to be used with client.js file
 
 // Fetch data from client-side JS using AJAX
-const loadTweets = function() {
-  $.get('/tweets/', renderTweets);
-};
+const loadTweets = () => $.get('/tweets/', renderTweets);
 
 // Create safeHTML text
-const escape = (str) => {
+const escape = str => {
   let p = document.createElement('p');
   p.appendChild(document.createTextNode(str));
   return p.innerHTML;
@@ -39,7 +37,7 @@ const determineTimeSince = (ms) => {
 };
 
 // Create a tweet element from a tweet object
-const createTweetElement = function(tweetData) {
+const createTweetElement = tweetData => {
   const date = determineTimeSince(tweetData.created_at);
   const $tweet = $(`
     <article>
@@ -69,7 +67,7 @@ const createTweetElement = function(tweetData) {
 };
   
 // Append an array of tweets to tweeter page
-const renderTweets = function(arrOfObjs) {
+const renderTweets = arrOfObjs => {
   arrOfObjs
     .reverse()
     .forEach(tweetObj => $('#tweet-container').append(createTweetElement(tweetObj)));

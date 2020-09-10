@@ -1,4 +1,4 @@
-$(document).ready(function() {
+$(document).ready(() => {
   // Show scroll button on scroll
   $(window).scroll(() => {
     if ($(window).scrollTop() === 0) {
@@ -14,7 +14,6 @@ $(document).ready(function() {
   $('#scroll-button').click(() => {
     $('.new-tweet').show();
     $('textarea').focus();
-
     $(document).scrollTop('.new-tweet');
   });
 });

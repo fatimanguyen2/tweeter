@@ -4,7 +4,7 @@
 * Reminder: Use (and do all your DOM work in) jQuery's document ready function
 */
 
-$(document).ready(function() {
+$(document).ready(() => {
 //Show new tweet section on click
   $('#compose-button').click(() => {
     $('.new-tweet').slideToggle('fast');
@@ -12,7 +12,7 @@ $(document).ready(function() {
   });
 
   // Post new tweet using AJAX
-  $('form').submit(function(event) {
+  $('form').submit(function () {
     event.preventDefault();
 
     const $formText = $(this).serialize();
