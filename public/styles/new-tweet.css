@@ -23,8 +23,9 @@ textarea:focus {
   margin: 10px 0px;
 }
 .new-tweet button {
-  background-color: #4056A1;
+  background-color: rgb(20, 33, 61);
   color: white;
+  padding: 5px;
 }
 
 .new-tweet button:focus {
@@ -41,8 +42,9 @@ form div {
 }
 
 /* Error message if empty text or text too long */
-#error {
+.error {
   color: red;
   font-family: 'Sans Source Pro', sans-serif; 
   font-size: 0.75em;
+  display: none;
 }

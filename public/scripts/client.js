@@ -5,11 +5,7 @@
 */
 
 $(document).ready(function() {
-  // Hide input error messsage
-  const $errorMess = $('#error');
-  $errorMess.hide();
-
-  //Show new tweet section on click
+//Show new tweet section on click
   $('#compose-button').click(() => {
     $('.new-tweet').slideToggle('fast');
     $('textarea').focus();
@@ -17,24 +13,27 @@ $(document).ready(function() {
 
   // Post new tweet using AJAX
   $('form').submit(function(event) {
+    event.preventDefault();
+
     const $formText = $(this).serialize();
     const textArea = $(this).find('textarea').val();
 
-    event.preventDefault();
-    $errorMess.hide();
+    $('.error').hide();
 
     if (!textArea) {
-      $errorMess.text('This field is required.').show();
+      $('.error').text('This field is required.').show();
+
     } else if (textArea.length > 140) {
-      $errorMess.text('The text entered exceeds the maximum length.').show();
+      $('.error').text('The text entered exceeds the maximum length.').show();
+
     } else {
       $.post('/tweets', $formText)
-        .then(() =>  $.get('/tweets/'))
         .then(data => {
-          const newTweet = createTweetElement(data[data.length - 1]);
-          $('#tweet-container').prepend(newTweet);
+          $('#tweet-container').empty();
+          loadTweets();
+          $('textarea').val('');
+          $('.counter').text(140);
         });
-      $('textarea').val('');
     }
   });
 
