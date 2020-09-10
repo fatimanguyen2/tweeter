@@ -6,10 +6,9 @@
 
 $(document).ready(function() {
   // Hide input error messsage
-  const $errorMess = $('#error'); //IS THIS NEEDED??????????????@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+  const $errorMess = $('#error');
   $errorMess.hide();
 
-  // Hide new tweet section @@@@@@@@@@@@@@@@@@@@@@CSS VS JS@@@@@@@@@@@
   // $('.new-tweet').hide();
 
   //Show new tweet section on click

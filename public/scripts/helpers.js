@@ -44,7 +44,7 @@ const createTweetElement = function(tweetData) {
   
 // Append an array of tweets to tweeter page
 const renderTweets = function(arrOfObjs) {
-  arrOfObjs.forEach(function(tweetObj) {
-    $('#tweet-container').append(createTweetElement(tweetObj));
-  });
+  arrOfObjs
+    .reverse()
+    .forEach(tweetObj => $('#tweet-container').append(createTweetElement(tweetObj)));
 };
