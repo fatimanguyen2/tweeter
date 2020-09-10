@@ -27,6 +27,7 @@ nav span {
 
 #compose-button button {
   border: 0;
+  padding: 20px;
   padding-bottom: 5px;
 }
 

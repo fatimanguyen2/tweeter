@@ -5,8 +5,16 @@
 */
 
 $(document).ready(function() {
+  // Hide input error messsage
   const $errorMess = $('#error');
   $errorMess.hide();
+
+  // Hide new tweet section
+  const $newTweet = $('.new-tweet');
+  $newTweet.hide();
+
+  //Show new tweet section on click
+  $('#compose-button').click( () => $newTweet.slideToggle('fast'));
 
   // Post new tweet using AJAX
   $('form').submit(function(event) {
