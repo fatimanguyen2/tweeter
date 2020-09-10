@@ -29,6 +29,9 @@ nav span {
   border: 0;
   padding: 20px;
   padding-bottom: 5px;
+  outline: none;
+  background-color: #4056A1;
+  color: #FFFFFF; 
 }
 
 #compose-button i {
@@ -36,6 +39,9 @@ nav span {
   position: relative;
 }
 
+#compose-button button:hover {
+  cursor: pointer;
+}
 #compose-button button:hover + i {
   top: 10px;
 }

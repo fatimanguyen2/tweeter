@@ -6,16 +6,24 @@
 
 $(document).ready(function() {
   // Hide input error messsage
-  const $errorMess = $('#error');
+  const $errorMess = $('#error'); //IS THIS NEEDED??????????????@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
   $errorMess.hide();
 
-  // Hide new tweet section
-  const $newTweet = $('.new-tweet');
-  $newTweet.hide();
+  // Hide new tweet section @@@@@@@@@@@@@@@@@@@@@@CSS VS JS@@@@@@@@@@@
+  // $('.new-tweet').hide();
+  // Show scroll button on scroll
+  $(window).scroll(() => {
+    if ($(window).scrollTop() === 0) {
+      $('#scroll-button').hide();
+    } else {
+      $('#scroll-button').show();
+    }
+  });
 
   //Show new tweet section on click
   $('#compose-button').click(() => {
-    $newTweet.slideToggle('fast', () => $('#tweet-text').focus());
+    $('.new-tweet').slideToggle('fast');
+    $('textarea').focus();
   });
 
   // Post new tweet using AJAX
@@ -32,9 +40,7 @@ $(document).ready(function() {
       $errorMess.text('The text entered exceeds the maximum length.').show();
     } else {
       $.post('/tweets', $formText)
-        .then(() => {
-          return $.get('/tweets/')
-        })
+        .then(() =>  $.get('/tweets/'))
         .then(data => {
           const newTweet = createTweetElement(data[data.length - 1]);
           $('#tweet-container').prepend(newTweet);
