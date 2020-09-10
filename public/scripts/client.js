@@ -11,14 +11,6 @@ $(document).ready(function() {
 
   // Hide new tweet section @@@@@@@@@@@@@@@@@@@@@@CSS VS JS@@@@@@@@@@@
   // $('.new-tweet').hide();
-  // Show scroll button on scroll
-  $(window).scroll(() => {
-    if ($(window).scrollTop() === 0) {
-      $('#scroll-button').hide();
-    } else {
-      $('#scroll-button').show();
-    }
-  });
 
   //Show new tweet section on click
   $('#compose-button').click(() => {
