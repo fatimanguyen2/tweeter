@@ -14,7 +14,9 @@ $(document).ready(function() {
   $newTweet.hide();
 
   //Show new tweet section on click
-  $('#compose-button').click( () => $newTweet.slideToggle('fast'));
+  $('#compose-button').click(() => {
+    $newTweet.slideToggle('fast', () => $('#tweet-text').focus());
+  });
 
   // Post new tweet using AJAX
   $('form').submit(function(event) {

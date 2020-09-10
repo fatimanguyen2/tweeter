@@ -8,6 +8,11 @@ textarea {
   border: none;
   resize: none;
   border-bottom: thick solid black;
+
+}
+
+textarea:focus {
+  outline: none;
 }
 
 .new-tweet div{
