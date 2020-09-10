@@ -3,8 +3,10 @@ $(document).ready(function() {
   $(window).scroll(() => {
     if ($(window).scrollTop() === 0) {
       $('#scroll-button').hide();
+      $('#compose-button').show();
     } else {
       $('#scroll-button').show();
+      $('#compose-button').hide();
     }
   });
 
