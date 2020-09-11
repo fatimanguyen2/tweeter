@@ -13,5 +13,8 @@ body > header {
 body > header .image {
   margin-top: 2rem;
 }
+body > header h2 {
+  font-weight: normal;
+}
 
 /*# sourceMappingURL=header.css.map */

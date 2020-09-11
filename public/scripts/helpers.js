@@ -3,42 +3,16 @@
 // Fetch data from client-side JS using AJAX
 const loadTweets = () => $.get('/tweets/', renderTweets);
 
-// Create safeHTML text
+// Create safeHTML text to prevent
 const escape = str => {
   let p = document.createElement('p');
   p.appendChild(document.createTextNode(str));
   return p.innerHTML;
 };
 
-const determineTimeSince = (ms) => {
-  const now = new Date();
-
-  // Get time difference from now and tweet time in secs
-  const secsPassed = (now.getTime() - ms) / 1000;
-  
-  let time;
-  switch (true) {
-    case (secsPassed < 60):
-      time = parseInt(secsPassed) + ' seconds ago';
-      break;
-    case (secsPassed < 3600):
-      time = parseInt(secsPassed / 60) + ' minutes ago';
-      break;
-    case (secsPassed < 86400):
-      time = parseInt(secsPassed / 3600) + ' hours ago';
-      break;
-    case (secsPassed < 31536000): 
-      time = parseInt(secsPassed / 86400) + ' days ago';
-      break;
-    case (secsPassed >= 31536000): 
-      time = parseInt(secsPassed / 31536000) + ' years ago'; 
-  }
-  return time;
-};
-
 // Create a tweet element from a tweet object
 const createTweetElement = tweetData => {
-  const date = determineTimeSince(tweetData.created_at);
+  const date = moment(tweetData.created_at).fromNow();
   const $tweet = $(`
     <article>
       <header>
