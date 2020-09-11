@@ -2,19 +2,18 @@ form {
   display: flex;
   flex-direction: column;
 }
-form div {
-  display: flex;
-  justify-content: space-between;
-}
-
-textarea {
+form textarea {
   background-color: transparent;
   border: none;
   resize: none;
   border-bottom: thick solid black;
 }
-textarea:focus {
+form textarea:focus {
   outline: none;
+}
+form div {
+  display: flex;
+  justify-content: space-between;
 }
 
 .new-tweet {
@@ -27,7 +26,8 @@ textarea:focus {
 .new-tweet button {
   background-color: #14213d;
   color: white;
-  padding: 5px;
+  padding: 7px;
+  border-radius: 5px;
 }
 .new-tweet button:focus {
   outline: 3px solid #5e9ed6;
@@ -42,7 +42,7 @@ textarea:focus {
 .error {
   color: red;
   font-family: "Sans Source Pro", sans-serif;
-  font-size: 0.75em;
+  font-size: 1rem;
   display: none;
 }
 

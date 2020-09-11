@@ -1,4 +1,4 @@
-$nav-bgd-color:rgb(20, 33, 61);
+@import 'globals';
 
 nav {
   height: 120px;
@@ -13,40 +13,36 @@ nav {
   justify-content: space-between;
   align-items: center;
   z-index: 2;
+  font-family: $tweeter-font;
+  font-size: 1.5rem;
   
-  span {
-    font-family: 'Bungee',sans-serif;
-  }
-
-}
-
-
-#compose-button {
-  font-family: 'Sans Source Pro', sans-serif; 
-  font-size: 0.8em;
-  display:flex;
-  flex-direction: column;
-  align-items: center;
-
-  button {
-    border: 0;
-    padding: 20px;
-    padding-bottom: 5px;
-    outline: none;
-    background-color: rgb(20, 33, 61);
-    color: #FFFFFF; 
-
-    &:hover {
-      cursor: pointer;
+  #compose-button {
+    font-family: $body-font; 
+    font-size: 1rem;
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+  
+    button {
+      border: 0;
+      padding: 20px;
+      padding-bottom: 5px;
+      outline: none;
+      background-color: $nav-bgd-color;
+      color: #FFFFFF; 
+  
+      &:hover {
+        cursor: pointer;
+      }
+  
+      &:hover + i {
+        top: 10px;
+      }
     }
-
-    &:hover + i {
-      top: 10px;
+  
+    i {
+      color: red;
+      position: relative;
     }
-  }
-
-  i {
-    color: red;
-    position: relative;
   }
 }

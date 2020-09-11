@@ -11,19 +11,17 @@ nav {
   justify-content: space-between;
   align-items: center;
   z-index: 2;
-}
-nav span {
   font-family: "Bungee", sans-serif;
+  font-size: 1.5rem;
 }
-
-#compose-button {
+nav #compose-button {
   font-family: "Sans Source Pro", sans-serif;
-  font-size: 0.8em;
+  font-size: 1rem;
   display: flex;
   flex-direction: column;
   align-items: center;
 }
-#compose-button button {
+nav #compose-button button {
   border: 0;
   padding: 20px;
   padding-bottom: 5px;
@@ -31,13 +29,13 @@ nav span {
   background-color: #14213d;
   color: #FFFFFF;
 }
-#compose-button button:hover {
+nav #compose-button button:hover {
   cursor: pointer;
 }
-#compose-button button:hover + i {
+nav #compose-button button:hover + i {
   top: 10px;
 }
-#compose-button i {
+nav #compose-button i {
   color: red;
   position: relative;
 }

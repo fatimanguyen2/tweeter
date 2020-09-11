@@ -1,10 +1,10 @@
-$box-shadow-color: rgb(182, 181, 181);
+@import 'globals';
 
 #tweet-container {
   opacity: 0.7;
 
   header {
-    background-color: #f4f1ec;
+    background-color: $main-bgd-color;
     height: 100px;
     display: flex;
     flex-direction: row;
@@ -43,7 +43,7 @@ $box-shadow-color: rgb(182, 181, 181);
   }
 
   .handle {
-    color: lightgrey;
+    color: $handle-color;
     visibility: hidden;
   }
 
@@ -60,7 +60,7 @@ $box-shadow-color: rgb(182, 181, 181);
     font-size: 0.5em;
 
     i {
-      color: rgb(20, 33, 61);
+      color: $nav-bgd-color;
       visibility: hidden;
     }
   }
