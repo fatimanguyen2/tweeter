@@ -4,8 +4,11 @@ Tweeter is a simple, single-page Twitter clone.
 
 ## Final Product
 !["Homepage screenshot(desktop size)"](https://github.com/fatimanguyen2/tweeter/blob/master/docs/homepage-desktop-view.png)
+
 !["Homepage screenshot(mobile and tablet size)"](https://github.com/fatimanguyen2/tweeter/blob/master/docs/homepage-mobile-view.png)
-!["Toggle button to access new tweet section gif"](new-tweet-toggle.gif)
+
+!["Toggle button to access new tweet section gif"](https://github.com/fatimanguyen2/tweeter/blob/master/docs/new-tweet-toggle.gif)
+
 !["Back to top button gif"](https://github.com/fatimanguyen2/tweeter/blob/master/docs/scroll-button.gif)
 
 ## Getting Started
