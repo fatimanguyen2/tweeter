@@ -12,7 +12,7 @@ $(document).ready(() => {
   });
 
   // Post new tweet using AJAX
-  $('form').submit(function () {
+  $('form').submit(function (event) {
     event.preventDefault();
 
     const $formText = $(this).serialize();
