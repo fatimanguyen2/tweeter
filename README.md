@@ -9,7 +9,7 @@ The project was made using HTML, CSS, JS, jQuery and AJAX on the front-end, and 
 
 !["Homepage screenshot(mobile and tablet size)"](https://github.com/fatimanguyen2/tweeter/blob/master/docs/homepage-mobile-view.png)
 
-!["Toggle button to access new tweet section gif"](https://github.com/fatimanguyen2/tweeter/blob/master/docs/new-tweet-toggle.gif)
+!["Toggle button to access new tweet section gif"](https://github.com/fatimanguyen2/tweeter/blob/master/docs/compose-button.gif)
 
 !["Back to top button gif"](https://github.com/fatimanguyen2/tweeter/blob/master/docs/scroll-button.gif)
 
