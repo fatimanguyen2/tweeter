@@ -1,0 +1,52 @@
+form {
+  display: flex;
+  flex-direction: column;
+
+  div {
+    display: flex;
+    justify-content: space-between;
+  }
+}
+
+textarea {
+  background-color: transparent;
+  border: none;
+  resize: none;
+  border-bottom: thick solid black;
+
+  &:focus {
+    outline: none;
+  }
+}
+
+.new-tweet {
+  display: none;
+
+  div{
+    font-family: 'Bungee', sans-serif;
+    margin: 10px 0px;
+  }
+
+  button {
+    background-color: rgb(20, 33, 61);
+    color: white;
+    padding: 5px;
+
+    &:focus {
+      outline: 3px solid rgb(94, 158, 214);
+    }
+  }
+}
+
+/* Class added/removed depending on character count */
+.exceedingCharLimit {
+  color: red;
+}
+
+/* Error message if empty text or text too long */
+.error {
+  color: red;
+  font-family: 'Sans Source Pro', sans-serif; 
+  font-size: 0.75em;
+  display: none;
+}

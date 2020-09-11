@@ -1,9 +1,9 @@
-#scroll-button {
-  display: none;
-  height: 70px;
+#scroll-button{
+  display:none;
+  height:70px;
   width: 70px;
   background-color: red;
-  border-radius: 50%;
+  border-radius: 50%;  
   color: white;
   border: none;
   padding: 20px;
@@ -14,9 +14,8 @@
   right: 20px;
   cursor: pointer;
   outline: none;
-}
-#scroll-button :hover {
-  background-color: darkgray;
-}
 
-/*# sourceMappingURL=scroll-button.css.map */
+  :hover {
+    background-color: darkgray;
+  }
+}

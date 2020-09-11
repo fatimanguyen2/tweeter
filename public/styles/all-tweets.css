@@ -1,28 +1,6 @@
 #tweet-container {
   opacity: 0.7;
 }
-
-#tweet-container article:hover {
-  opacity: 1;
-  box-shadow: 20px 20px 20px rgb(182, 181, 181);
-}
-
-#tweet-container article:hover .handle{
-  visibility: visible;
-}
-
-
-#tweet-container article {
-  border: thick solid black;
-  margin: 50px 0px;
-  padding: 20px;
-}
-
-#tweet-container img {
-  width: 100px;
-  margin-right: 1rem;
-}
-
 #tweet-container header {
   background-color: #f4f1ec;
   height: 100px;
@@ -31,22 +9,37 @@
   justify-content: space-between;
   align-items: center;
 }
-
+#tweet-container article {
+  border: thick solid black;
+  margin: 50px 0px;
+  padding: 20px;
+}
+#tweet-container article:hover {
+  opacity: 1;
+  box-shadow: 20px 20px 20px #b6b5b5;
+}
+#tweet-container article:hover .handle {
+  visibility: visible;
+}
+#tweet-container article:hover i {
+  visibility: visible;
+}
+#tweet-container img {
+  width: 100px;
+  margin-right: 1rem;
+}
 #tweet-container .avatar {
   display: flex;
   flex-direction: row;
   align-items: center;
 }
-
 #tweet-container .handle {
   color: lightgrey;
   visibility: hidden;
 }
-
 #tweet-container main {
   margin: 30px;
 }
-
 #tweet-container footer {
   border-top: thick solid black;
   padding-top: 15px;
@@ -55,12 +48,9 @@
   justify-content: space-between;
   font-size: 0.5em;
 }
-
 #tweet-container footer i {
-  color: rgb(20, 33, 61);
+  color: #14213d;
   visibility: hidden;
 }
 
-#tweet-container article:hover i {
-  visibility: visible;
-}
+/*# sourceMappingURL=all-tweets.css.map */

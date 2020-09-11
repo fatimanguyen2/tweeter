@@ -1,0 +1,19 @@
+$header-bgd-color: rgb(252, 163, 17);
+$header-bgd-image: url("https://www.transparenttextures.com/patterns/absurdity.png");
+
+body > header {
+  height: 400px;
+  width: 100%;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: $header-bgd-color;
+  background-image: $header-bgd-image;
+  margin-top: 120px;
+
+  .image {
+    margin-top: 2em;
+  }
+}

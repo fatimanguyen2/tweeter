@@ -6,6 +6,7 @@
 html {
   box-sizing: border-box;
 }
+
 *, *:before, *:after {
   box-sizing: inherit;
 }
@@ -13,7 +14,6 @@ html {
 /*
  * Global layout stuff
  */
-
 body {
   color: #545149;
   background-color: #f4f1ec;
@@ -23,49 +23,48 @@ body {
 /*
  * Additional CSS can be defined below or in other CSS files, as per instructions
  */
+body {
+  font-family: "Sans Source Pro", sans-serif;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
 
- body {
-   font-family: 'Sans Source Pro', sans-serif; 
-   display: flex;
-   flex-direction: column;
-   justify-content: center;
-   align-items: center;
- }
- nav {
-  font-family: 'Bungee', sans-serif;
- }
+nav {
+  font-family: "Bungee", sans-serif;
+}
 
- /* Main element */
- main {
-   width: 90%;
-   background-color: #f4f1ec;
-   display: flex;
-   flex-direction: column;
-   justify-content: center;
- }
+main {
+  width: 90%;
+  background-color: #f4f1ec;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
 
- /* Responsive design: change layout to desktop sieze */
- @media only screen and (min-width: 1024px) {
-   body {
-     display:flex;
-     flex-direction: row;
-     align-items: flex-start;
-     padding-top: 10rem;
-   }
+/* Responsive design: change layout to desktop sieze */
+@media only screen and (min-width: 1024px) {
+  body {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    padding-top: 10rem;
+  }
 
-   html body > header {
-     margin: 2rem;
-     width: 30%;
-   }
+  html body > header {
+    margin: 2rem;
+    width: 30%;
+  }
+  html .container {
+    margin: 2rem;
+    margin-top: 0;
+    width: 70%;
+  }
+  html .new-tweet {
+    margin: 2rem;
+    display: inline-block;
+  }
+}
 
-   html .container {
-     margin: 2rem;
-     margin-top: 0;
-     width: 70%;
-   }
-
-   html .new-tweet {
-     margin: 2rem;
-     display: inline-block;
-   }
- }
+/*# sourceMappingURL=layout.css.map */

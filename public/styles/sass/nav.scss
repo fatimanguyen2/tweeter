@@ -1,0 +1,52 @@
+$nav-bgd-color:rgb(20, 33, 61);
+
+nav {
+  height: 120px;
+  width: 100%;
+  background-color: $nav-bgd-color;
+  color: #FFFFFF; 
+  padding: 1.5em;
+  position: fixed;
+  top: 0;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 2;
+  
+  span {
+    font-family: 'Bungee',sans-serif;
+  }
+
+}
+
+
+#compose-button {
+  font-family: 'Sans Source Pro', sans-serif; 
+  font-size: 0.8em;
+  display:flex;
+  flex-direction: column;
+  align-items: center;
+
+  button {
+    border: 0;
+    padding: 20px;
+    padding-bottom: 5px;
+    outline: none;
+    background-color: rgb(20, 33, 61);
+    color: #FFFFFF; 
+
+    &:hover {
+      cursor: pointer;
+    }
+
+    &:hover + i {
+      top: 10px;
+    }
+  }
+
+  i {
+    color: red;
+    position: relative;
+  }
+}
