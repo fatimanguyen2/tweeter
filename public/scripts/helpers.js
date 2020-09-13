@@ -14,7 +14,7 @@ const changeTextRed = (node, condition) => {
 // Fetch data from client-side JS using AJAX
 const loadTweets = () => $.get('/tweets/', renderTweets);
 
-// Create safeHTML text to prevent
+// Create safeHTML text to prevent cross-site scripting
 const escape = str => {
   let p = document.createElement('p');
   p.appendChild(document.createTextNode(str));
