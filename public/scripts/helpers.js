@@ -1,4 +1,15 @@
-// Helper functions to be used with client.js file
+// Helper functions to be used with client.js & composer-char-counter.js file
+// Dynamically count characters (e.g. for new tweet section)
+const countChar = (node, max, textLength) => node.text(max - textLength);
+
+// Turn text in red if limit exceeded (e.g. character counter for new tweet section)
+const changeTextRed = (node, condition) => {
+  if (condition) {
+    node.addClass('exceedingCharLimit');
+  } else {
+    node.removeClass('exceedingCharLimit');
+  }
+};
 
 // Fetch data from client-side JS using AJAX
 const loadTweets = () => $.get('/tweets/', renderTweets);
@@ -40,9 +51,29 @@ const createTweetElement = tweetData => {
   return $tweet;
 };
   
-// Append an array of tweets to tweeter page
+// Append an array of tweets to tweeter page in reverse chronological order
 const renderTweets = arrOfObjs => {
   arrOfObjs
     .reverse()
     .forEach(tweetObj => $('#tweet-container').append(createTweetElement(tweetObj)));
+};
+
+// Check if valid tweet (no empty string nor exceeding chars)
+const tweetSubmissionCheck = (userInput, maxChar) => {
+  if (!userInput) {
+    $('.error').text('This field is required.').show();
+    return false;
+
+  } else if (userInput.length > maxChar) {
+    $('.error').text('The text entered exceeds the maximum length.').show();
+    return false;
+  } else {
+    return true;
+  }
+};
+
+const resetForm = (maxChar) => {
+  $('#tweet-container').empty();
+  $('textarea').val('');
+  $('.counter').text(maxChar);
 };

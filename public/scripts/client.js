@@ -3,7 +3,6 @@
 * jQuery is already loaded
 * Reminder: Use (and do all your DOM work in) jQuery's document ready function
 */
-
 $(document).ready(() => {
 //Show new tweet section on click
   $('#compose-button').click(() => {
@@ -12,28 +11,18 @@ $(document).ready(() => {
   });
 
   // Post new tweet using AJAX
-  $('form').submit(function (event) {
-    event.preventDefault();
-
+  $('form').submit(function(event) {
     const $formText = $(this).serialize();
     const textArea = $(this).find('textarea').val();
 
-    $('.error').hide();
+    event.preventDefault();
+    $('.error').hide(); //ensures that error message is hidden when composing tweet after an error
+    let validTweet = tweetSubmissionCheck(textArea, 140);
 
-    if (!textArea) {
-      $('.error').text('This field is required.').show();
-
-    } else if (textArea.length > 140) {
-      $('.error').text('The text entered exceeds the maximum length.').show();
-
-    } else {
+    if (validTweet) {
       $.post('/tweets', $formText)
-        .then(data => {
-          $('#tweet-container').empty();
-          loadTweets();
-          $('textarea').val('');
-          $('.counter').text(140);
-        });
+        .then(() =>resetForm(140))
+        .then(() => loadTweets());
     }
   });
 

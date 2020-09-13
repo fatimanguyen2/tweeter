@@ -39,6 +39,7 @@
 }
 #tweet-container main {
   margin: 30px;
+  word-wrap: break-word;
 }
 #tweet-container footer {
   border-top: thick solid black;
