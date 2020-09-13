@@ -59,21 +59,20 @@ const renderTweets = arrOfObjs => {
 };
 
 // Check if valid tweet (no empty string nor exceeding chars)
-const tweetSubmissionCheck = (userInput, maxChar) => {
-  if (!userInput) {
-    $('.error').text('This field is required.').show();
-    return false;
-
-  } else if (userInput.length > maxChar) {
-    $('.error').text('The text entered exceeds the maximum length.').show();
+const checkTweetSubmission = (userInput, maxChar) => {
+  if (!userInput || userInput.length > maxChar) {
     return false;
   } else {
     return true;
   }
 };
 
+//Reset form (e.g. after posting a tweet) 
 const resetForm = (maxChar) => {
   $('#tweet-container').empty();
   $('textarea').val('');
   $('.counter').text(maxChar);
 };
+
+// Write errormessage
+const writeError = (node, message) => $(node).text(message);
